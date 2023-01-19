@@ -92,11 +92,11 @@ function fiveAndEleven(num) {
     Write a function, `countConsonants(word)`, that takes in a string word and
     returns the number of consonants in the word.
 */
-function countVowels(word) {
-    const vowels = ["a", "e", "i", "o", "u"];
+function countConsonants(word) {
+    const vowels = ["a", "e", "i", "o", "u", " "];
     let count = 0;
     for (let i = 0; i < word.length; i++) {
-        if (vowels.includes(word[i])) {
+        if (!vowels.includes(word[i])) {
             count++;
         }
     }
@@ -120,8 +120,21 @@ function countVowels(word) {
     `.split('')` function on strings to make a copy of the string as an array.
     The `.join('')` function joins the elements in an array into a string.
 */
-function whisper(str) {
-    return str.toLowerCase();
+function alternatingLetters(str) {
+    let splitStr = str.split("");
+    let strArr = [];
+
+    for(i=0; i<splitStr.length; i++){
+        if(i%2===0){
+            let even = splitStr[i].toLowerCase();
+            strArr.push(even);
+        } else {
+            let odd = splitStr[i].toUpperCase();
+            strArr.push(odd);
+        }
+    }
+
+    return strArr.join('');
 }
 
 
